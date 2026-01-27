@@ -112,7 +112,7 @@ function createAptitudeCard(card){
   divF.className = "aptitude-card";
 
   const divCH = document.createElement('div');
-  divCH.className = "aptitude-header"; 
+  divCH.className = "aptitude-h";
 
   const div = document.createElement('div');
   const img = document.createElement('img');
@@ -123,17 +123,26 @@ function createAptitudeCard(card){
   const pN = document.createElement('h1');
   pN.innerHTML = card.number;
 
-  divCH.appendChild(div);
-  divCH.appendChild(pN);
+  const divHr = document.createElement('div'); 
+  divHr.className = "aptitude-header"; 
+
+  divHr.appendChild(div);
+  divHr.appendChild(pN);
+
+  divCH.appendChild(divHr);
+
+  const h2 = document.createElement('h2');
+  h2.innerHTML = card.title;
+
+  divCH.appendChild(h2);
 
   const divCC = document.createElement('div');
   divCC.className = "aptitude-cont";
-  const h2 = document.createElement('h2');
-  h2.innerHTML = card.title;
+
   const p = document.createElement('p');
   p.innerHTML = card.description;
 
-  divCC.appendChild(h2);
+  //divCC.appendChild(h2);
   divCC.appendChild(p);
 
   divF.appendChild(divCH);

@@ -10,6 +10,7 @@
 *{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body{
@@ -244,7 +245,7 @@ ul li:hover{
 
 .title-me{
     position: absolute;
-    max-inline-size: 1650px;
+    max-inline-size: 1700px;
     inline-size: 100%;
     display: flex;
     flex-direction: column;
@@ -398,6 +399,7 @@ dec{
     cursor: pointer;
     display: flex;
     align-items: center;
+    user-select: none;
     
 }
 
@@ -451,10 +453,13 @@ dec{
     margin: 20px 10px;
 }
 
+.aptitude-h{
+    padding: 20px;
+}
+
 .aptitude-header{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
     block-size: 50px;
     align-items: center;
 }
@@ -484,9 +489,9 @@ dec{
     text-align: justify;
 }
 
-.aptitude-cont h2{
+.aptitude-h h2{
     color: var(--title);
-    margin-block-end: 20px;
+    margin-block-start: 10px;
 }
 
 .aptitude-cont p{
@@ -562,6 +567,7 @@ dec{
 
 .skills{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .skill-target{
@@ -785,6 +791,17 @@ dec{
         }
     }
 
+    .title-desc{
+
+        padding-block-start: 15px;
+        font-size: 15px;
+
+        p{
+            font-size: 14px;
+            
+        }
+    }
+
     .address{
         font-size: 2.5vw !important;
     }
@@ -805,5 +822,75 @@ dec{
             inline-size: 40px;
             block-size: 40px;
         }
+    }
+
+    .title-cont{
+        font-size: 12px;
+    }
+
+    .img-me-cont{
+        block-size: 315px;
+
+        .img-me1{
+            inline-size: 245px;
+            block-size: 180px;
+        }
+
+        .img-me2{
+            inline-size: 245px;
+            block-size: 180px;
+        }
+    }
+
+    .aptitude-cards{
+        inline-size: 100%;
+        justify-content: center;
+    }
+
+    .aptitude-card{
+        max-inline-size: none;
+    }
+
+    .aptitude-h{
+        display: flex;
+
+        h2{
+            font-size: 16px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .aptitude-header{
+        flex-direction: row-reverse;
+
+        div{
+            margin-inline-end: 20px;
+        }
+
+        h1{
+            inline-size: 40px;
+            display: none;
+        }
+    }
+
+    .aptitude-cont{
+        p{
+            font-size: 14px;
+        }
+    }
+
+    .skill-target{
+        inline-size: 95px;
+        block-size: 100px;
+
+        p{
+            font-size: 14px;
+        }
+    }
+
+    .skill-title{
+        font-size: 18px;
     }
 }
