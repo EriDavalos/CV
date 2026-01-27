@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    inline-size: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*Es la sección de banner*/
+
+.separator{
+    inline-size: 445px;
+    block-size: 100%;
+    position: absolute;
+    background: #292929;
+    z-index: -1;
+    border-radius: 20px 0 0 20px;
+}
+
+.banner-profile{
+    display: flex;
+    block-size: 320px;
+    align-items: center;
+    position: relative;
+    padding-block-start: 50px;
+}
+
+.photo-profile{
+    inline-size: 300px;
+    block-size: 300px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white;
+    margin-inline-start: 65px;
+}
+
+.photo-profile:hover img{
+    transform: scale(1.2);
+}
+
+.photo-profile img{
+    transition: ease-in-out 0.3s;
+    transform: scale(1);
+}
+
+.description-profile{
+    inline-size: 920px;
+    block-size: 200px;
+    background: #44A45D;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    z-index: -1;
+    inset-inline-end: 0;
+}
+
+/*Sección de info*/
+
+.section-info{
+    display: flex;
+}
+
+.content-info{
+    margin-block-end: 20px;
+}
+
+.content-info p{
+    font-size: 17px;
+}
+
+/*Titulo de información*/
+
+.title-info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin-block-end: 20px;
+}
+
+.title-info h1{
+    inline-size: 70%;
+    font-size: 3vh;
+}
+
+.info-interline{
+    inline-size: 25%;
+    border-block-end-style: solid;
+    border-color: #44A45D;
+    transform: translateX(20px);
+    border-width: 4px;
+}
+
+.info{
+    inline-size: 405px;
+    background: #292929;
+    padding: 0 20px 0 20px;
+    color: white;
+    
+}
+
+/*Sección de proyectos*/
+
+.project{
+    inline-size: 605px;
+    margin: 0 75px 0 75px;
+}
+
+/*Sección de contactos*/
+
+.contact{
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-28px);
+}
+
+.contact_n{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.contact_n p{
+    font-weight: bold;
+    margin-inline-start: 20px;
+}
+
+.contact_n img{
+    transform: rotate3d(0, 1, 0, 0deg);
+    transition: ease-in-out 0.5s;
+}
+
+.contact_n:hover img{
+    transform: rotate3d(0, 1, 0, 360deg);
+}
+
+.numberphone{
+    display: flex;
+}
+
+.email{
+    display: flex;
+}
+
+/*Sección de skills*/
+
+.skills-list{
+    font-weight: bold;
+    margin-inline-start: 50px;
+    
+}
+
+li{
+    transition: 0.3s;
+    font-size: 16px;
+    margin-block-end: 10px;
+    cursor: pointer;
+}
+
+li:hover{
+    transform: translateX(10px);
+}
+
+/*Estilo de proyecto*/
+
+.project-decoration{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-inline-end: 10px;
+    transition: 0.3s;
+}
+
+.project-circle{
+    inline-size: 20px;
+    block-size: 20px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #44A45D;
+    background-color: white;
+    border-width: 5px;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.project-line{
+    background-color: #44A45D;
+    inline-size: 14%;
+    block-size: 120px;
+    transition: 0.3s;
+}
+
+/*Sección de proyectos*/
+
+.project-content{
+    display: flex;
+    block-size: 150px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.project-content:hover{
+    box-shadow: #00000026 0 0 10px;
+
+}
+
+.project-content:hover .project-line{
+    block-size: 0;
+}
+
+.project-content:hover .project-circle{
+    border-color: white;
+    background-color: #44A45D;
+}
+
+.project-title{
+    display: flex;
+    align-items: center;
+    margin-block-end: 10px;
+    font-size: 18px;
+}
+
+.project-title p{
+    font-size: 20px;
+}
+
+.project-title h1{
+    margin-inline-end: 10px;
+}
