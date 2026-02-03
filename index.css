@@ -559,10 +559,21 @@ dec{
     position: relative;
 }
 
+.skills-cont{
+    block-size: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-sub{
+    inline-size: 50%;
+}
+
 .skill-cont{
     color: var(--subtitle);
     font-size: 25px;
     font-weight: bold;
+    margin-block-start: 25px;
 }
 
 .skills{
@@ -643,6 +654,24 @@ dec{
     }
 }
 
+.softskills{
+
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-block-start: 20px;
+
+    div{
+        inline-size: 40px;
+        block-size: 40px;
+        background: url(images/inline_end_icon.png);
+        background-position: center;
+        background-size: cover;
+        margin-inline: 5px;
+    }
+
+}
+
 /* ----- Estilos para los certificados ----- */
 
 .close-c{
@@ -706,7 +735,7 @@ dec{
         block-size: 70px;
         inline-size: 70px;
         border-style: solid;
-        border-color: #ffffff;
+        border-color: #ffffff00;
         background-color: rgba(0, 0, 0, 0.2);
         background-size: contain;
         cursor: pointer;
@@ -715,6 +744,12 @@ dec{
 
 #img-viewer {
   touch-action: pinch-zoom;
+}
+
+/* Sección de proyectos */
+
+.projects-s{
+    background-color: #1A1A1A;
 }
 
 @media (max-width: 1200px) {
@@ -758,6 +793,10 @@ dec{
         position: relative;
         margin: 0;
         max-inline-size: unset;
+    }
+
+    .skills-cont{
+        inline-size: 100%;
     }
 }
 
@@ -877,7 +916,7 @@ dec{
 
     .aptitude-cont{
         p{
-            font-size: 14px;
+            font-size: 15px;
         }
     }
 
@@ -893,4 +932,5 @@ dec{
     .skill-title{
         font-size: 18px;
     }
+
 }

@@ -18,8 +18,6 @@ const languageAndTech = [
 
 const idiome = "English B1"
 
-//const skills = ["Trabajo en equipo", "Resolución de problemas de manera eficiente", "Aprendizaje eficiente y rápido", "Abierto a nuevas áreas de aprendizaje"];
-
 const projects = [
   {title: "Página web", company: "Trabajo autónomo", role: "Desarrollador Front-End", description: "Desarrollo de un sitio web estático con HTML y CSS para un negocio dedicado a la pintura plástica, con el objetivo de mostrar de forma profesional el portafolio de trabajos del cliente."},
   {title: "Software de escritorio + web", company: "Trabajo autónomo", role: "Desarrollador Full-Stack", description: "Desarrollo de software de escritorio en C# .NET para la gestión de un pequeño negocio de alquiler de apartamentos. El sistema incluye funciones de registro y control monetario, integrándose con un sitio web que muestra los apartamentos disponibles y sus vistas. Ambos sistemas están conectados a una base de datos remota para sincronización en tiempo real."},
@@ -36,18 +34,33 @@ const aptituds = [
 ];
 
 const certs = {
+
     JavaCert: {
       title: "Universidad Java - Cero a Experto - Actualizado (+155 hrs)", 
       files: [
         {type: 'img', url: 'certifications/CertificadoJAVA0EXPERTO/CertificadoJAVA0EXPERTO_EriDavalos.webp'},
         {type: 'pdf', url: 'certifications/CertificadoJAVA0EXPERTO/CertificadoJAVA0EXPERTO_EriDavalos.pdf'},
       ]
-    }, 
+    },
+
     WebCert: {
       title: "Universidad Desarrollo Web FrontEnd Web Developer!",
       files: [
         {type: 'img', url: 'certifications/CertificadoDESARROLLOWEB/CertificadoDESARROLLOWEB_EriDavalos.webp'},
         {type: 'pdf', url: 'certifications/CertificadoDESARROLLOWEB/CertificadoDESARROLLOWEB_EriDavalos.pdf'},
+      ]
+    },
+
+    FundaulaCert: {
+      title: "Certificados fundaula",
+      files: [
+        {type: 'img', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos_1.webp'},
+        {type: 'img', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos_2.webp'},
+        {type: 'img', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos_3.webp'},
+        {type: 'img', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos_4.webp'},
+        {type: 'img', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos_5.webp'},
+        {type: 'img', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos_6.webp'},
+        {type: 'pdf', url: 'certifications/CertificadoFUNDAULA/CertificadoFUNDAULA_EriDavalos.pdf'},
       ]
     },
   }
@@ -61,12 +74,19 @@ const skills = [
 
   {type: "frontend", time: 0.00, icon: "images/ionic_icon.png", name: "Ionic"},
   {type: "frontend", time: 0.25, icon: "images/angular_icon.png", name: "Angular"},
-  {type: "frontend", time: 0.50, icon: "images/html_icon.png", name: "Web"},
+  {type: "frontend", time: 0.50, icon: "images/html_icon.png", name: "Web", typeComp: 'certificate', comp: certs.FundaulaCert},
 
   {type: "backend", time: 0.00, icon: "images/databases_icon.png", name: "Databases"},
   {type: "backend", time: 0.25, icon: "images/node_icon.png", name: "NodeJS"},
   {type: "backend", time: 0.50, icon: "images/springboot_icon.png", name: "SpringBoot"},
   {type: "backend", time: 0.75, icon: "images/php_icon.png", name: "PHP"},
+  {type: "backend", time: 1.00, icon: "images/laravel_icon.png", name: "Laravel"},
+
+  {type: "softskills", time: 0.00, title: "Trabajo en equipo", text: "Colaboro y apoyo de forma efectiva a mis compañeros."},
+  {type: "softskills", time: 0.25, title: "Comunicación asertiva", text: "Explico mis ideas de forma clara y concisa."},
+  {type: "softskills", time: 0.50, title: "Adaptabilidad", text: "Soy capaz de aprender nuevas tecnologías para aplicarlas en mi área."},
+  {type: "softskills", time: 0.75, title: "Pensamiento crítico", text: "Evalúo las opciones más viables antes de tomar una decisión."},
+  {type: "softskills", time: 1.00, title: "Proactividad", text: "Tomo iniciativas por mi cuenta tanto para aprender nuevas cosas, como para tomar decisiones."},
 ];
 
 /* Animation type */
@@ -162,55 +182,95 @@ function createSkillsTarget(skill){
   const skills = document.getElementById('skills');
   const frontend = document.getElementById('frontend');
   const backend = document.getElementById('backend');
+  const softskills = document.getElementById('softskills');
 
   const div = document.createElement('div');
-  div.className = "skill-target";
-  const img = document.createElement('img');
-  img.src = skill.icon;
-  const p = document.createElement('p');
-  p.innerHTML = skill.name;
 
-  div.appendChild(img);
-  div.appendChild(p);
+  if(skill.type != 'softskills'){
 
-  const div2 = document.createElement('div');
-  div2.className = "skill-description";
+    div.className = "skill-target";
+    const img = document.createElement('img');
+    img.src = skill.icon;
+    const p = document.createElement('p');
+    p.innerHTML = skill.name;
 
-  const p2 = document.createElement('p');
-  p2.innerHTML = skill.typeComp == 'certificate' ? "Comprobado con certificado" : "Comprobado con proyecto";
+    div.appendChild(img);
+    div.appendChild(p);
 
-  const btn = document.createElement('button');
-  btn.innerHTML = skill.typeComp == 'certificate' ? "Ver certificado" : "Ver proyecto";
-  btn.addEventListener('click', function(){
-    
-    if(skill.typeComp == 'certificate'){
+    const div2 = document.createElement('div');
+    div2.className = "skill-description";
 
-      const img = document.getElementById('img-viewer');
-      const list = document.getElementById('images-list');
-      document.body.style.overflow = 'hidden';
+    const p2 = document.createElement('p');
+    p2.innerHTML = skill.typeComp == 'certificate' ? "Comprobado con certificado" : "Comprobado con proyecto";
 
-      list.innerHTML = "";
-      const files = skill.comp.files;
-      img.src = files[0].url;
-
-      files.forEach(file => {
-
-        const btn = document.createElement('button');
-        btn.style = 'background-image: url(' + (file.type == 'img' ? file.url : '/images/pdf_icon.png') + ');' + (file.type == 'pdf' ? 'background-size: 48px; background-repeat: no-repeat; background-position: center;' : '');
-
-        list.appendChild(btn);
-      });
+    const btn = document.createElement('button');
+    btn.innerHTML = skill.typeComp == 'certificate' ? "Ver certificado" : "Ver proyecto";
+    btn.addEventListener('click', function(){
       
-      certificates.showModal();
-      //window.location.href = skill.comp_url;
-    }
+      if(skill.typeComp == 'certificate'){
 
-  });
+        const img = document.getElementById('img-viewer');
+        const list = document.getElementById('images-list');
+        const buttons = list.querySelectorAll("button");
+        document.body.style.overflow = 'hidden';
 
-  div2.appendChild(p2);
-  div2.appendChild(btn);
+        list.innerHTML = "";
+        const files = skill.comp.files;
+        img.src = files[0].url;
 
-  div.appendChild(div2);
+        files.forEach(file => {
+
+          const btn = document.createElement('button');
+          btn.style = 'background-image: url(' + (file.type == 'img' ? file.url : '/images/pdf_icon.png') + ');' + (file.type == 'pdf' ? 'background-size: 48px; background-repeat: no-repeat; background-position: center;' : '');
+
+          btn.addEventListener('click', function(){
+
+            if(file.type == 'pdf'){
+              window.location.href = file.url;
+            }else{
+              img.src = file.url;
+              
+              buttons.forEach(btns => {
+                console.log(btns);
+                btns.style.borderColor = '#ffffff00';
+              });
+
+              btn.style.borderColor = '#ffffff';
+            }
+            
+          });
+
+          list.appendChild(btn);
+        });
+        
+        buttons[0].style.borderColor = '#ffffff';
+        certificates.showModal();
+        //window.location.href = skill.comp_url;
+      }
+
+    });
+
+    div2.appendChild(p2);
+    div2.appendChild(btn);
+
+    div.appendChild(div2);
+  }else{
+    div.className = "softskills";
+
+    const p1 = document.createElement('p');
+    p1.innerHTML = skill.title;
+    
+    const div2 = document.createElement('div');
+
+    const p2 = document.createElement('p');
+    p2.innerHTML = skill.text;
+
+    div.appendChild(p1);
+    div.appendChild(div2);
+    div.appendChild(p2);
+  }
+
+  
 
   switch (skill.type) {
     case "languajes":
@@ -223,6 +283,12 @@ function createSkillsTarget(skill){
 
     case "backend":
       backend.appendChild(div);
+      break;
+    
+    case "softskills":
+
+      softskills.appendChild(div);
+
       break;
 
     default:
