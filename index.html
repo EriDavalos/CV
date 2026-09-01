@@ -2,203 +2,187 @@
 <html lang="es-MX">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CV - Eri Davalos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Eri Davalos | Desarrollador Full-Stack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
+    <canvas id="matrix-canvas"></canvas>
+
+    <header id="header">
         <div class="menu">
-            <div class="profile">
-
-                <div class="profile-icon">
-                    <img src="images/me.png" alt="">
-                </div>
-                <p>Eri Davalos</p>
-            </div>
-
-            <ul class="menu-bar">
-                <li> <a>Inicio</a> </li>
-
-                <li> <a>Sobre mí</a> </li>
-
-                <li> <a>Habilidades</a> </li>
-
-                <li> <a>Proyectos</a> </li>
-
-                <li> <a>Contacto</a> </li>
-            </ul>
-
-            <a class="download-cv" href="documents/Eri_Davalos_CV.pdf" download="Eri_Davalos_CV.pdf">
-                <img src="images/download_icon.png" alt="">
-                <p> Descargar CV </p>
+            <a href="#inicio" class="profile">
+                <div class="profile-icon"><img src="images/me.png" alt="Eri Davalos"></div>
+                <p class="profile-name">Eri Davalos</p>
             </a>
+            <ul class="menu-bar" id="menu-bar">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mi</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-right">
+                <a class="download-cv" href="documents/Eri_Davalos_CV.pdf" download="Eri_Davalos_CV.pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>CV</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-
-        <section class="banner-s section-s">
-
-            <div class="me cont">
-
-                <div class="circle-pre">
-
-                </div>
-
-                <div class="title-me">
-                    <h3>Desarrollador</h3>
-                    <h4><strong>Full</strong>-Stack</h4>
-                </div>
-
-                <div class="image-pre">
-                    <img src="images/me.png" alt="">
-                </div>
-
-            </div>
-
-            <div class="desc-me cont">
-                <div class="desc-m">
-                    <h1 class="welcome" id="welcome"><<dec>¡Bienvenidos!</dec>, soy/></h1>
-                    <div class="myname">
-                        <h2>Eri Davalos</h2>
-                        <div></div>
+        <!-- HERO -->
+        <section class="banner-s section-s" id="inicio">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="terminal-window reveal">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                            <span class="terminal-title">terminal ~ bash</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat</span> intro.txt</p>
+                            <p class="terminal-line output" id="welcome-text"></p>
+                        </div>
                     </div>
-                    <p>Interesado en ampliar mis conocimientos en programación y explorar nuevas tecnologías. Me motiva el aprendizaje continuo, la innovación y el desarrollo de soluciones que fortalezcan mi crecimiento profesional.</p>
+                    <h1 class="hero-name reveal" data-delay="200">
+                        <span class="hero-name-text">Eri Davalos</span>
+                        <span class="hero-name-underline"></span>
+                    </h1>
+                    <h2 class="hero-role reveal" data-delay="400">
+                        <span class="role-tag">&lt;</span>Desarrollador<span class="role-highlight">Full</span>-Stack<span class="role-tag">/&gt;</span>
+                    </h2>
+                    <p class="hero-desc reveal" data-delay="600">
+                        Interesado en ampliar mis conocimientos en programacion y explorar nuevas tecnologias.
+                        Me motiva el aprendizaje continuo, la innovacion y el desarrollo de soluciones que fortalezcan mi crecimiento profesional.
+                    </p>
+                    <div class="hero-actions reveal" data-delay="800">
+                        <a href="#proyectos" class="btn-primary"><span>Ver proyectos</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                        <a href="mailto:eri.davalos.8888@gmail.com" class="btn-secondary"><span>Contactar</span></a>
+                    </div>
+                    <div class="hero-social reveal" data-delay="1000">
+                        <a href="https://www.linkedin.com/in/eri-jair-davalos-quijano-7802a5312/" class="social-link" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://github.com/EriDavalos" class="social-link" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                        <a href="https://www.facebook.com/eri.jair.8/" class="social-link" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    </div>
                 </div>
-
-                <div class="social-red">
-                    <div class="red" style="background-image: url(images/linkedin_icon.png); transition: 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15); animation: rescale 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15) 0.2s forwards; transform: scale(0);"><a href="https://www.linkedin.com/in/eri-jair-davalos-quijano-7802a5312/"></a></div>
-                    <div class="red" style="background-image: url(images/github_icon.png); transition: 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15); animation: rescale 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15) 0.3s forwards; transform: scale(0);"><a href="https://github.com/EriDavalos"></a></div>
-                    <div class="red" style="background-image: url(images/discord_icon.png); transition: 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15); animation: rescale 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15) 0.4s forwards; transform: scale(0);"><a href=""></a></div>
-                    <div class="red" style="background-image: url(images/facebook_icon.png); transition: 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15); animation: rescale 0.4s cubic-bezier(0.61, -0.15, 0.26, 1.15) 0.5s forwards; transform: scale(0);"><a href="https://www.facebook.com/eri.jair.8/"></a></div>
-                </div>
-
-                <div class="contact-down">
-                    <a href="mailto:eri.davalos.8888@gmail.com" class="email-style">eri.davalos.8888@gmail.com</a>
-                    <p class="address">Mérida, Yuc. Temozón</p>
+                <div class="hero-right reveal" data-delay="300">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-ring"></div>
+                        <div class="hero-image-ring ring-2"></div>
+                        <div class="hero-image"><img src="images/me.png" alt="Eri Davalos"></div>
+                        <div class="code-float float-1"><span>&lt;div&gt;</span></div>
+                        <div class="code-float float-2"><span>{ }</span></div>
+                        <div class="code-float float-3"><span>npm run</span></div>
+                    </div>
                 </div>
             </div>
-
-            <div class="btn-down cont">
-                <p>Mostrar más</p>
-                <img src="images/inline_end_icon.png" alt="">
+            <div class="scroll-indicator reveal" data-delay="1200">
+                <div class="mouse"><div class="mouse-wheel"></div></div>
+                <p>Scroll</p>
             </div>
-            
         </section>
 
-        <section class="aboutme-s section-s">
-
-            <div class="title-desc cont">
-
-                <div class="title-cont ">
-                    <img src="images/aboutme_icon.png" alt="">
-                    <h1>Sobre mí</h1>
-                </div>
-
-                <p>Mi nombre es Eri Davalos y tengo 22 años. Desde mi infancia he sentido una gran curiosidad por la tecnología y las computadoras. Siempre he sido una persona creativa y observadora, lo que me ha llevado a buscar soluciones prácticas a los retos que enfrento. Esta pasión me motivó a estudiar Ingeniería en Sistemas Computacionales, donde he fortalecido mis conocimientos y encontrado áreas que realmente me inspiran. Me entusiasma seguir aprendiendo, explorar nuevas tecnologías y aportar valor ayudando a los demás.</p>
-
+        <!-- SOBRE MI -->
+        <section class="aboutme-s section-s" id="sobre-mi">
+            <div class="section-header reveal">
+                <span class="section-number">01</span>
+                <h1>Sobre mi</h1>
+                <div class="section-line"></div>
             </div>
-
-            <div class="aptitude-demo cont">
-
-                <div id="aptitude-cards" class="aptitude-cards">
-
+            <div class="aboutme-content">
+                <div class="aboutme-text reveal" data-delay="200">
+                    <p>Mi nombre es <strong>Eri Davalos</strong> y tengo 22 anios. Desde mi infancia he sentido una gran curiosidad por la tecnologia y las computadoras. Siempre he sido una persona creativa y observadora, lo que me ha llevado a buscar soluciones practicas a los retos que enfrento. Esta pasion me motivo a estudiar <strong>Ingenieria en Sistemas Computacionales</strong>, donde he fortalecido mis conocimientos y encontrado areas que realmente me inspiran.</p>
                 </div>
-
-                <div class="img-me-cont">
-                    <div class="img-me1"></div>
-                    <div class="img-me2"></div>
+                <div class="aptitude-demo">
+                    <div id="aptitude-cards" class="aptitude-cards"></div>
+                    <div class="img-me-cont reveal" data-delay="400">
+                        <div class="img-me1"></div>
+                        <div class="img-me2"></div>
+                    </div>
                 </div>
-
-
             </div>
-
         </section>
 
-        <section class="skills-s section-s">
-            
-            <div class="title-desc cont">
-
-                <div class="title-cont ">
-                    <img src="images/code_icon.png" alt="">
-                    <h1>Habilidades</h1>
-                </div>
-
+        <!-- HABILIDADES -->
+        <section class="skills-s section-s" id="habilidades">
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h1>Habilidades</h1>
+                <div class="section-line"></div>
             </div>
-
-            <div class="cont skills-cont">
-
-               <div class="skills-sub">
-                    <div class="skill-cont">
-
-                        <p class="skill-title">Lenguajes de programación</p>
-
-                        <div class="skills" id="skills">
-
-                        </div>
-
-                    </div>
-
-                    <div class="skill-cont">
-
-                        <p class="skill-title">Herramientas Front-End</p>
-
-                        <div class="skills" id="frontend">
-
-                        </div>
-
-                    </div>
-
+            <div class="skills-grid">
+                <div class="skills-category reveal" data-delay="100">
+                    <h3 class="category-title"><span class="cat-icon">&lt;/&gt;</span> Lenguajes</h3>
+                    <div class="skills" id="skills"></div>
                 </div>
-               
-                <div class="skills-sub">
-
-                    <div class="skill-cont">
-
-                        <p class="skill-title">Herramientas Back-End</p>
-
-                        <div class="skills" id="backend">
-
-                        </div>
-
-                    </div>
-
-                    <div class="skill-cont">
-
-                        <p class="skill-title">Habilidades blandas</p>
-
-                        <div class="skills" id="softskills">
-
-                        </div>
-
-                    </div>
-
+                <div class="skills-category reveal" data-delay="200">
+                    <h3 class="category-title"><span class="cat-icon">&#9881;</span> Front-End</h3>
+                    <div class="skills" id="frontend"></div>
                 </div>
-                
+                <div class="skills-category reveal" data-delay="300">
+                    <h3 class="category-title"><span class="cat-icon">&#9776;</span> Back-End</h3>
+                    <div class="skills" id="backend"></div>
+                </div>
+                <div class="skills-category reveal" data-delay="400">
+                    <h3 class="category-title"><span class="cat-icon">&#9733;</span> Habilidades blandas</h3>
+                    <div class="skills" id="softskills"></div>
+                </div>
             </div>
+        </section>
 
+        <!-- PROYECTOS -->
+        <section class="projects-s section-s" id="proyectos">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h1>Proyectos</h1>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid" id="projects-grid"></div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contact-s section-s" id="contacto">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h1>Contacto</h1>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content reveal" data-delay="200">
+                <div class="contact-card">
+                    <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                    <h3>Email</h3>
+                    <a href="mailto:eri.davalos.8888@gmail.com">eri.davalos.8888@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>Ubicacion</h3>
+                    <p>Merida, Yucatan</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                    <h3>Disponibilidad</h3>
+                    <p>Full-Time / Freelance</p>
+                </div>
+            </div>
+            <div class="footer reveal" data-delay="400">
+                <p>&copy; 2026 Eri Davalos &mdash; Construido con <span class="footer-heart">&lt;3</span> y mucho cafe</p>
+            </div>
         </section>
 
         <dialog class="certificates" id="certificates">
-
-            <div class="close-c">
-                <button id="closeCertificate" onclick="closeCerts()">✕</button>
-            </div>
-
-            <div class="image-cont">
-                <img id="img-viewer" src="" alt="">
-            </div>
-
-            <div class="images-list" id="images-list">
-                <button></button>
-            </div>
-
+            <div class="close-c"><button onclick="closeCerts()">&#10005;</button></div>
+            <div class="image-cont"><img id="img-viewer" src="" alt=""></div>
+            <div class="images-list" id="images-list"></div>
         </dialog>
-
     </main>
-    
     <script src="index.js"></script>
 </body>
 </html>
